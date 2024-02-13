@@ -52,8 +52,10 @@ function M.setup()
   })
   --Configuraciones de sources especificas
   --config de autopair
-  cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
-
+  cmp.event:on(
+    'confirm_done',
+    cmp_autopairs.on_confirm_done()
+  )
   -- Config de linea de comandos
   cmp.setup.cmdline({ '/', '?' }, {
     mapping = cmp.mapping.preset.cmdline(),
