@@ -23,43 +23,9 @@ return {
   config = function(opts)
     require('telescope').setup(opts)
     require('telescope').load_extension('fzf')
+    require('telescope').load_extension('scope')
   end,
   keys = {
-    {
-      "<leader>pp",
-      function()
-        require('telescope.builtin').git_files({ show_untracked = true })
-      end,
-      desc = "Telescope Git Files",
-    },
-    {
-      "<leader>pe",
-      function()
-        require("telescope.builtin").buffers()
-      end,
-      desc = "Telescope buffers",
-    },
-    {
-      "<leader>gs",
-      function()
-        require("telescope.builtin").git_status()
-      end,
-      desc = "Telescope Git status",
-    },
-    {
-      "<leader>gc",
-      function()
-        require("telescope.builtin").git_bcommits()
-      end,
-      desc = "Telescope Git status",
-    },
-    {
-      "<leader>gb",
-      function()
-        require("telescope.builtin").git_branches()
-      end,
-      desc = "Telescope Git branches",
-    },
     {
       "<leader>rp",
       function()
@@ -79,27 +45,6 @@ return {
         })
       end
     },
-    {
-      "<leader>pf",
-      function()
-        require('telescope.builtin').find_files()
-      end,
-      desc = "Telescope Find Files",
-    },
-    {
-      "<leader>ph",
-      function()
-        require("telescope.builtin").help_tags()
-      end,
-      desc = "Telescope Help"
-    },
-    {
-      "<leader>bb",
-      function()
-        require("telescope").extensions.file_browser.file_browser({ path = "%:h:p", select_buffer = true })
-      end,
-      desc = "Telescope file browser"
-    }
   },
 }
 
