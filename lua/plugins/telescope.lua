@@ -25,26 +25,5 @@ return {
     require('telescope').load_extension('fzf')
     require('telescope').load_extension('scope')
   end,
-  keys = {
-    {
-      "<leader>rp",
-      function()
-        require("telescope.builtin").find_files({
-          prompt_title = "Plugins",
-          cwd = "~/.config/nvim/lua/plugins",
-          attach_mappings = function(_, map)
-            local actions = require("telescope.actions")
-            local action_state = require("telescope.actions.state")
-            map("i", "<c-y>", function(prompt_bufnr)
-              local new_plugin = action_state.get_current_line()
-              actions.close(prompt_bufnr)
-              vim.cmd(string.format("edit ~/.config/nvim/lua/plugins/%s.lua", new_plugin))
-            end)
-            return true
-          end
-        })
-      end
-    },
-  },
 }
 
