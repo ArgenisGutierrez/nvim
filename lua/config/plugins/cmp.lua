@@ -48,6 +48,7 @@ function M.setup()
       { name = 'path' },
       { name = 'luasnip' },
       { name = 'buffer' },
+      {name='friendly-snippets'}
     },
   })
   --Configuraciones de sources especificas

@@ -11,7 +11,7 @@ local opts = {
   nowait = false, -- use `nowait` when creating keymaps
   expr = false,   -- use `expr` when creating keymaps
 }
-
+-- Telescope keymaps
 wk.register({
   f = {
     name = "Telescope",
@@ -26,8 +26,37 @@ wk.register({
   }
 }, opts)
 
+--LSP keymaps
+wk.register({
+  l = {
+    name = "LSP",
+    e = { vim.diagnostic.open_float, "Diagnostic" },
+    q = { vim.diagnostic.setloclist, "Loc List" },
+    k = { vim.lsp.buf.hover, "Definicion" },
+    K = { vim.lsp.buf.signature_help, "Signatue Help" },
+    c = { vim.lsp.buf.code_action, "Code Action" },
+    d = { vim.lsp.buf.type_definition, "Type Definition" },
+    f = { function()
+      vim.lsp.buf.format { async = true }
+    end, "Format" },
+  }
+}, opts)
+
+--Workspaces keymaps
+wk.register({
+  W = {
+    name = "Workspaces",
+    a = { vim.lsp.buf.add_workspace_folder, "Add Workspace" },
+    r = { vim.lsp.buf.remove_workspace_folder, "Add Workspace" },
+    l = { function()
+        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+      end, "Add Workspace" },
+  }
+}, opts)
+
+--keymaps varios
 wk.register({
   ["w"] = { "<cmd>w<cr>", "Save File" },
-  ["Q"] = { "<cmd>xa<cr>", "Exit" },
+  ["q"] = { "<cmd>q!<cr>", "Exit" },
   ["c"] = { "<cmd>bd<cr>", "Close File" },
 }, opts)

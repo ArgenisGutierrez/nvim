@@ -11,3 +11,6 @@ keymap.set("n", "<C-l>", "<C-w>l")
 keymap.set("n", "-", ":split<Return>", opts)
 keymap.set("n", "|", ":vsplit<Return>", opts)
 
+-- Buffer
+keymap.set("n", "<S-l>", ":tabnext<cr>")
+keymap.set("n", "<S-h>", ":tabprevious<cr>")

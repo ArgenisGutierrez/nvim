@@ -6,7 +6,7 @@ return {
     local bufferline = require('bufferline')
     bufferline.setup({
       options = {
-        mode = "buffers",
+        mode = "tabs",
         style_preset = bufferline.style_preset.no_italic,
         themable = true,
         numbers = "none",
@@ -20,9 +20,9 @@ return {
         diagnostics = 'nvim_lsp',
         diagnostics_update_in_insert = false,
         color_icons = true,
-        separator_style = "slop",
+        separator_style = "slant",
         always_show_bufferline = true,
-        enforce_regular_tabs = true
+        enforce_regular_tabs = false
       },
     })
   end
