@@ -24,6 +24,8 @@ return {
     require('telescope').setup(opts)
     require('telescope').load_extension('fzf')
     require('telescope').load_extension('scope')
+    require('telescope').load_extension('lazygit')
+    require('telescope').load_extension('projects')
   end,
 }
 
