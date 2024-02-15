@@ -5,10 +5,10 @@ return {
   config = function()
     local bufferline = require('bufferline')
     bufferline.setup({
-      options={
-        mode="buffers",
+      options = {
+        mode = "buffers",
         style_preset = bufferline.style_preset.minimal,
-        themable= true,
+        themable = true,
         numbers = "none",
         close_command = "bdelete! %d",
         right_mouse_command = "bdelete! %d",
@@ -20,7 +20,7 @@ return {
         },
         buffer_close_icon = '󰛉',
         modified_icon = '󱦣',
-        close_icon= '󱎘',
+        close_icon = '󱎘',
         left_trunc_marker = '',
         right_trunc_marker = '',
         max_name_length = 18,
@@ -30,9 +30,13 @@ return {
         diagnostics = 'nvim_lsp',
         diagnostics_update_in_insert = false,
         color_icons = true,
-        get_element_icon = function (element)
-          local icon,hl = require('nvim-web-devicons').get_icon_by_filetype(element.filetype,{default = false})
-          return icon,hl
+        get_element_icon = function(element)
+          local icon, hl = require('nvim-web-devicons').get_icon_by_filetype(element.filetype, { default = false })
+          return icon, hl
+        end,
+        diagnostics_indicator = function(count, level)
+          local icon = level:match("error") and " " or " "
+          return " " .. icon .. count
         end,
         show_buffer_icons = true,
         show_buffer_close_icons = true,
@@ -47,7 +51,7 @@ return {
         hover = {
           enabled = true,
           delay = 200,
-          reveal = {'close'}
+          reveal = { 'close' }
         },
         sort_by = 'insert_after_current',
       }
