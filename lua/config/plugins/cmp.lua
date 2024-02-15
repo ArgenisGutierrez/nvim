@@ -48,14 +48,14 @@ function M.setup()
       { name = 'path' },
       { name = 'luasnip' },
       { name = 'buffer' },
-      {name='friendly-snippets'}
+      { name = 'friendly-snippets' }
     },
   })
   --Configuraciones de sources especificas
   --config de autopair
   cmp.event:on(
     'confirm_done',
-    cmp_autopairs.on_confirm_done()
+    cmp_autopairs.on_confirm_done({ sh = false })
   )
   -- Config de linea de comandos
   cmp.setup.cmdline({ '/', '?' }, {
