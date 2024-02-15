@@ -49,7 +49,7 @@ wk.register({
   l = {
     name = " LSP",
     e = { vim.diagnostic.open_float, "Diagnostic" },
-    q = { vim.diagnostic.setloclist, " Log List" },
+    q = { "<cmd>Trouble document_diagnostics<cr>", " Log List" },
     k = { vim.lsp.buf.hover, " Definicion" },
     K = { vim.lsp.buf.signature_help, "Signatue Help" },
     c = { vim.lsp.buf.code_action, " Code Action" },
