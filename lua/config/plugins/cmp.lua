@@ -1,6 +1,5 @@
 local cmp = require('cmp')
 local luasnip = require('luasnip')
-local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 local select_opts = { behavior = cmp.SelectBehavior.Select }
 local M = {}
 
@@ -52,11 +51,6 @@ function M.setup()
     },
   })
   --Configuraciones de sources especificas
-  --config de autopair
-  cmp.event:on(
-    'confirm_done',
-    cmp_autopairs.on_confirm_done({ sh = false })
-  )
   -- Config de linea de comandos
   cmp.setup.cmdline({ '/', '?' }, {
     mapping = cmp.mapping.preset.cmdline(),
