@@ -12,8 +12,8 @@ keymap.set("n", "-", ":split<Return>", opts)
 keymap.set("n", "|", ":vsplit<Return>", opts)
 
 -- Buffer
-keymap.set("n", "<S-l>", ":tabnext<cr>")
-keymap.set("n", "<S-h>", ":tabprevious<cr>")
+keymap.set("n", "<S-l>", ":bnext<cr>")
+keymap.set("n", "<S-h>", ":bprev<cr>")
 
 --Terminal
 keymap.set({"n","t"}, "<A-1>", "<ESC><cmd>1ToggleTerm direction=vertical name=vertical<cr>")
