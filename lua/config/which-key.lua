@@ -92,4 +92,5 @@ wk.register({
   ["M"] = { "<cmd>Mason<cr>", " Mason" },
   ["L"] = { "<cmd>Lazy<cr>", " Lazy" },
   ["h"] = { "<cmd>:noh<cr>", "󰸱 No Highlights" },
+  ["n"] = { "<cmd>:Navbuddy<cr>", " Navbuddy" },
 }, opts)
