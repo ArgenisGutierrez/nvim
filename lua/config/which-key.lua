@@ -21,6 +21,7 @@ wk.register({
     s = { "<cmd>Telescope git_status<cr>", "󱖫 Git Status" },
     c = { "<cmd>Telescope git_bcommits<cr>", " Git Commits in File" },
     G = { "<cmd>Telescope git_branches<cr>", " Git Branchs" },
+    t = { "<cmd>Telescope projects<cr>", " Projects" },
     h = { "<cmd>Telescope help_tags<cr>", "󰮥 Help" },
     e = { "<cmd>lua require('telescope').extensions.file_browser.file_browser({ path = '%:h:p', select_buffer = true })<cr>", " Explorer" },
     p = {

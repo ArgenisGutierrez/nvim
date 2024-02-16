@@ -5,8 +5,15 @@ return {
   lazy = false,
   priority = 1000,
   config = function()
+    require('ayu').setup({
+      overrides ={
+        LineNr = { fg = '#3fa6ff' },
+      }
+    })
     vim.cmd([[colorscheme ayu-mirage]])
 
+    --Drop
+    vim.api.nvim_set_hl(0, "Drop", { default =true, bg = 'NONE', nocombine=true})
     --Navic highlights definition
     vim.api.nvim_set_hl(0, "NavicIconsFile", { default = true, bg = 'NONE', fg = "#0d688c" })
     vim.api.nvim_set_hl(0, "NavicIconsModule", { default = true, bg = 'NONE', fg = "#0d688c" })
