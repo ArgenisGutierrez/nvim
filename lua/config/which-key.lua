@@ -23,7 +23,7 @@ wk.register({
     G = { "<cmd>Telescope git_branches<cr>", " Git Branchs" },
     t = { "<cmd>Telescope projects<cr>", " Projects" },
     h = { "<cmd>Telescope help_tags<cr>", "󰮥 Help" },
-    e = { "<cmd>lua require('telescope').extensions.file_browser.file_browser({ path = '%:h:p', select_buffer = true })<cr>", " Explorer" },
+    e = { "<cmd>lua require('telescope').extensions.file_browser.file_browser({ path = '%:h:p', select_buffer = true, mode=n })<cr>", " Explorer" },
     p = {
       function()
         require("telescope.builtin").find_files({
@@ -49,12 +49,13 @@ wk.register({
 wk.register({
   l = {
     name = " LSP",
-    e = { vim.diagnostic.open_float, "Diagnostic" },
+    s = { "<cmd>Lspsaga finder<cr>", "󰮗 Finder" },
+    r = { "<cmd>Lspsaga rename<cr>", "󰑕 Rename" },
+    e = { "<cmd>Lspsaga show_buf_diagnostics<cr>", "Diagnostic" },
     q = { "<cmd>Trouble document_diagnostics<cr>", " Log List" },
-    k = { vim.lsp.buf.hover, " Definicion" },
+    k = { "<cmd>Lspsaga hover_doc<cr>"," Definicion" },
     K = { vim.lsp.buf.signature_help, "Signatue Help" },
-    c = { vim.lsp.buf.code_action, " Code Action" },
-    d = { vim.lsp.buf.type_definition, "Type Definition" },
+    c = { "<cmd>Lspsaga code_action<cr>", " Code Action" },
     f = {
       function()
         vim.lsp.buf.format { async = true }
@@ -79,8 +80,8 @@ wk.register({
   g = {
     name = "󰊢 Git",
     g = { "<cmd>:LazyGit<cr>", " LazyGit" },
-    d = { "<cmd>:DiffviewOpen<cr>", " LazyGit" },
-    c = { "<cmd>:DiffviewClose<cr>", " LazyGit" },
+    d = { "<cmd>:DiffviewOpen<cr>", " Diff Open" },
+    c = { "<cmd>:DiffviewClose<cr>", " Diff Close" },
     h = { "<cmd>:DiffviewFileHistory<cr>", " LazyGit" },
   }
 }, opts)
@@ -93,5 +94,6 @@ wk.register({
   ["M"] = { "<cmd>Mason<cr>", " Mason" },
   ["L"] = { "<cmd>Lazy<cr>", " Lazy" },
   ["h"] = { "<cmd>:noh<cr>", "󰸱 No Highlights" },
-  ["n"] = { "<cmd>:Navbuddy<cr>", " Navbuddy" },
+  ["n"] = { "<cmd>:Lspsaga outline<cr>", " Navbuddy" },
+  ["s"] = { "/", "󰱼 Search" },
 }, opts)

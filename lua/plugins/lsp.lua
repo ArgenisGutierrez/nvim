@@ -4,6 +4,7 @@ return {
   dependencies = {
     "williamboman/mason.nvim",
     "folke/neodev.nvim",
+    'nvimdev/lspsaga.nvim',
   },
   config = function()
     --- Funcion que indica que los keymaps solo estan disponibles cuando el buffer esta vinculado a un lsp
@@ -12,10 +13,10 @@ return {
     local on_attach = function(_, bufnr)
       local opts = { buffer = bufnr }
 
-      vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-      vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+      vim.keymap.set('n', '[d', ':LSPsaga diagnostic_jump_next<cr>',opts)
+      vim.keymap.set('n', ']d', ':LSPsaga diagnostic_jump_prev<cr>',opts)
       vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+      vim.keymap.set('n', 'gd', ':LSPsaga goto_definition<cr>', opts)
       vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
       vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
     end
