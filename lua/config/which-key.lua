@@ -51,7 +51,7 @@ wk.register({
     name = " LSP",
     s = { "<cmd>Lspsaga finder<cr>", "󰮗 Finder" },
     r = { "<cmd>Lspsaga rename<cr>", "󰑕 Rename" },
-    e = { "<cmd>Lspsaga show_buf_diagnostics<cr>", "Diagnostic" },
+    e = { "<cmd>Lspsaga show_buf_diagnostics<cr>", "󰩂 Diagnostic" },
     q = { "<cmd>Trouble document_diagnostics<cr>", " Log List" },
     k = { "<cmd>Lspsaga hover_doc<cr>"," Definicion" },
     K = { vim.lsp.buf.signature_help, "Signatue Help" },
