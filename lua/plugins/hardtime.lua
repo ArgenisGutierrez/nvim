@@ -6,6 +6,6 @@ return {
   config = true,
   opts = {
     -- Add "oil" to the disabled_filetypes
-    disabled_filetypes = { "qf", "netrw", "NvimTree", "lazy", "mason", "oil", "sagaoutline", "sagafinder","saga_codeaction", "alpha","help" },
+    disabled_filetypes = { "qf", "netrw", "NvimTree", "lazy", "mason", "oil", "sagaoutline", "sagafinder","saga_codeaction", "alpha","help","checkhealth" },
   }
 }

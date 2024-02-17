@@ -1,5 +1,6 @@
 return {
   'nvimdev/lspsaga.nvim',
+  commit = 'bb399b24c70ff1a6e57a7057f66225daf8de3811',
   dependencies = {
     'nvim-treesitter/nvim-treesitter',
     'nvim-tree/nvim-web-devicons'
@@ -7,7 +8,10 @@ return {
   event = 'LspAttach',
   config = function()
     require('lspsaga').setup({
-      outline ={
+      symbols_in_winbar = {
+        enable = true,
+      },
+      outline = {
         layout = 'float',
       }
     })
