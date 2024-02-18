@@ -1,3 +1,5 @@
+--NOTE: Plugin para buscar todo tipo de cosas
+--https://github.com/nvim-telescope/telescope.nvim
 return {
   "nvim-telescope/telescope.nvim",
   event = 'VeryLazy',

@@ -1,3 +1,5 @@
+--NOTE: Plugin para crear las tabs de los buffers
+--https://github.com/akinsho/bufferline.nvim
 return {
   'akinsho/bufferline.nvim',
   version = "*",

@@ -1,3 +1,5 @@
+--NOTE: Plugin para manejo de terminales
+--https://github.com/akinsho/toggleterm.nvim
 return {
   'akinsho/toggleterm.nvim',
   version = '*',

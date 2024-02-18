@@ -1,4 +1,5 @@
---Mason descarga de lsp,dap,linter,formaters
+-- NOTE:Mason descarga de lsp,dap,linter,formaters
+-- https://github.com/williamboman/mason.nvim
 return {
   'williamboman/mason.nvim',
   config = true,

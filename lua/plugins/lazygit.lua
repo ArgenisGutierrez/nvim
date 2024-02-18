@@ -1,4 +1,5 @@
--- nvim v0.8.0
+--NOTE: Manjador de plugins
+--https://github.com/folke/lazy.nvim
 return {
   "kdheepak/lazygit.nvim",
   dependencies = {

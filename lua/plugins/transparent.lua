@@ -1,3 +1,5 @@
+--NOTE: Plugin para volver transparente los backgrounds
+--https://github.com/xiyaowong/transparent.nvim
 return {
   'xiyaowong/transparent.nvim',
   config = true,

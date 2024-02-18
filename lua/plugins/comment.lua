@@ -1,3 +1,5 @@
+--NOTE: Plugin para comentar automaticamente lineas de cofigo
+--https://github.com/numToStr/Comment.nvim
 return {
   'numToStr/Comment.nvim',
   config = true,

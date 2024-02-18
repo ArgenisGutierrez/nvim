@@ -1,4 +1,4 @@
---Colorscheme
+--NOTE: Colorscheme
 return {
   'Shatur/neovim-ayu',
   name = "ayu",

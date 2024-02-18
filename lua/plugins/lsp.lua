@@ -1,4 +1,5 @@
---LSP lenguage server protocol
+--NOTE: LSP lenguage server protocol
+--https://github.com/neovim/nvim-lspconfig
 return {
   "neovim/nvim-lspconfig",
   dependencies = {

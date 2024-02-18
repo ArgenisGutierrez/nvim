@@ -1,3 +1,5 @@
+-- NOTE: Plugin para resaltar palabras iguales bajo el cursor
+-- https://github.com/RRethy/vim-illuminate
 return {
   'RRethy/vim-illuminate',
   config = function()

@@ -1,3 +1,5 @@
+--NOTE: Plugin Interfaz grafica para git diff
+--https://github.com/sindrets/diffview.nvim
 return {
   'sindrets/diffview.nvim',
   config = function()

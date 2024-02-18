@@ -1,3 +1,5 @@
+--NOTE: Plugin para guardar en registro de projectos y acceder a ellos mediante telescope
+--https://github.com/ahmedkhalf/project.nvim
 return {
   'ahmedkhalf/project.nvim',
   config = function()

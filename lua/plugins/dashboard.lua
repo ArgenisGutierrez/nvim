@@ -1,3 +1,5 @@
+--NOTE: Plugin para crear un dashboard
+--https://github.com/goolord/alpha-nvim
 return {
   'goolord/alpha-nvim',
   config = function()

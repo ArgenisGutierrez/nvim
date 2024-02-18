@@ -1,4 +1,5 @@
---tree-sitter Resaltado de syntaxis de lenguajes
+--NOTE: tree-sitter Resaltado de syntaxis de lenguajes
+--https://github.com/nvim-treesitter/nvim-treesitter
 return {
   'nvim-treesitter/nvim-treesitter',
   -- dependencies = 'nvim-treesitter/nvim-treesitter-textobjects',

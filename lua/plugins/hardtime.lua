@@ -1,4 +1,4 @@
---HardTime para mejorar el uso de comandos y flujo de trabajo
+--NOTE: HardTime para mejorar el uso de comandos y flujo de trabajo
 --https://github.com/m4xshen/hardtime.nvim?tab=readme-ov-file
 return {
   "m4xshen/hardtime.nvim",

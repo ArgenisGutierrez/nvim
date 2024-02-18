@@ -1,3 +1,5 @@
+--NOTE: Plugin cerrar automaticamente llaves etc
+--https://github.com/m4xshen/autoclose.nvim
 return {
   'm4xshen/autoclose.nvim',
   config = true,

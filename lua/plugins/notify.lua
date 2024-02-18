@@ -1,4 +1,6 @@
 ---@diagnostic disable: missing-fields
+---NOTE Plugin para notificaciones graficas
+---https://github.com/rcarriga/nvim-notify
 return {
   "rcarriga/nvim-notify",
   event = "VeryLazy",

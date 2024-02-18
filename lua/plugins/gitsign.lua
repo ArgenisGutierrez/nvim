@@ -1,3 +1,5 @@
+--NOTE Plugin para mostrar senales de git en el line number
+--https://github.com/lewis6991/gitsigns.nvim
 return {
 	"lewis6991/gitsigns.nvim",
 	config = true,

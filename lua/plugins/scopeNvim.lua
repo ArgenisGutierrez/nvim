@@ -1,3 +1,5 @@
+--NOTE: Plugin que permite cambiar facilmente entre buffers
+--https://github.com/tiagovla/scope.nvim
 return {
   'tiagovla/scope.nvim',
   config = function()
