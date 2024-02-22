@@ -90,8 +90,9 @@ wk.register({
   ["c"] = { "<cmd>bd<cr>", " Close File" },
   ["M"] = { "<cmd>Mason<cr>", " Mason" },
   ["L"] = { "<cmd>Lazy<cr>", " Lazy" },
-  ["h"] = { "<cmd>:noh<cr>", "󰸱 No Highlights" },
-  ["n"] = { "<cmd>:Lspsaga outline<cr>", " Navbuddy" },
-  ["e"] = { "<cmd>:NvimTreeToggle<cr>", "󰙅 Files Explorer" },
+  ["h"] = { "<cmd>noh<cr>", "󰸱 No Highlights" },
+  ["n"] = { "<cmd>Lspsaga outline<cr>", " Navbuddy" },
+  ["e"] = { "<cmd>NvimTreeToggle<cr>", "󰙅 Files Explorer" },
   ["s"] = { "/", "󰱼 Search" },
+  ["N"] = { "<cmd>Neogen<cr>", "󱪝  NeoGen" },
 }, opts)
