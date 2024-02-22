@@ -15,15 +15,12 @@ local opts = {
 wk.register({
   f = {
     name = "󰭎 Telescope",
-    f = { "<cmd>Telescope find_files<cr>", " Find Files" },
-    b = { "<cmd>Telescope buffers<cr>", "󱂬 Buffers" },
-    g = { "<cmd>lua require('telescope.builtin').git_files({ show_untracked = true })<cr>", " Git Files" },
+    f = { "<cmd>lua require'telescope.builtin'.find_files({ hidden = true })<cr>", " Find Files" },
     s = { "<cmd>Telescope git_status<cr>", "󱖫 Git Status" },
     c = { "<cmd>Telescope git_bcommits<cr>", " Git Commits in File" },
     G = { "<cmd>Telescope git_branches<cr>", " Git Branchs" },
     t = { "<cmd>Telescope projects<cr>", " Projects" },
     h = { "<cmd>Telescope help_tags<cr>", "󰮥 Help" },
-    e = { "<cmd>lua require('telescope').extensions.file_browser.file_browser({ path = '%:h:p', select_buffer = true, mode=n })<cr>", " Explorer" },
     p = {
       function()
         require("telescope.builtin").find_files({
@@ -95,5 +92,6 @@ wk.register({
   ["L"] = { "<cmd>Lazy<cr>", " Lazy" },
   ["h"] = { "<cmd>:noh<cr>", "󰸱 No Highlights" },
   ["n"] = { "<cmd>:Lspsaga outline<cr>", " Navbuddy" },
+  ["e"] = { "<cmd>:NvimTreeToggle<cr>", "󰙅 Files Explorer" },
   ["s"] = { "/", "󰱼 Search" },
 }, opts)

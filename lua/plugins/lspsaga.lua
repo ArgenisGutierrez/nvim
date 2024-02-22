@@ -2,7 +2,7 @@
 --https://nvimdev.github.io/lspsaga/
 return {
   'nvimdev/lspsaga.nvim',
-  commit = 'bb399b24c70ff1a6e57a7057f66225daf8de3811',
+  -- commit = 'bb399b24c70ff1a6e57a7057f66225daf8de3811',
   dependencies = {
     'nvim-treesitter/nvim-treesitter',
     'nvim-tree/nvim-web-devicons'

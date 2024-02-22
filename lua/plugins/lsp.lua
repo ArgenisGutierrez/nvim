@@ -17,7 +17,7 @@ return {
       vim.keymap.set('n', '[d', ':LSPsaga diagnostic_jump_next<cr>',opts)
       vim.keymap.set('n', ']d', ':LSPsaga diagnostic_jump_prev<cr>',opts)
       vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-      vim.keymap.set('n', 'gd', ':LSPsaga goto_definition<cr>', opts)
+      vim.keymap.set('n', 'gd', ':Lspsaga goto_definition<cr>', opts)
       vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
       vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
     end
