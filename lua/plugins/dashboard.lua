@@ -2,60 +2,28 @@
 --https://github.com/goolord/alpha-nvim
 return {
   'goolord/alpha-nvim',
-  config = function()
-    local alpha = require("alpha")
-    local dashboard = require("alpha.themes.dashboard")
-    math.randomseed(os.time())
-
-    local function pick_color()
-      local colors = { "String", "Identifier", "Keyword", "Number" }
-      return colors[math.random(#colors)]
-    end
-
-    local logo = {
-      "                                 @@@@@@@@@@@@@@@@                             ",
-      "                             @@@@@              @@@@@                         ",
-      "                           @@@:                     @@@                       ",
-      "                         @@@                          @@@                  *@ ",
-      "                       @@@                              @@@             @+@::@",
-      "                      @@@                                 @@           @@++@@ ",
-      "                     @@:                                   @@       @@::@@@@  ",
-      "                    @@*                                     @@    @@+@@       ",
-      "                    @@                                      @@@@@*#@-         ",
-      "                   @@                                        @@*@@            ",
-      "                   @@      ::=+:-                ::-*-:.     @@               ",
-      "                   @@     :@    @:.             -@=   @@:    @@.              ",
-      "                   @@    :@      @:             -@     @:    @@.              ",
-      "                   @@    :-@    @#:             :@     @:    @@               ",
-      "                   @@      :#@@@-.               :-@@@::     @@               ",
-      "                    @@               +@@@@@@@+              @@%               ",
-      "                    @@@     @    @@-:@:::@:::@:-@@    @     @@                ",
-      "                     @@*     %@@@@@@@@@@@@@@@@@@@@@@@%     @@                 ",
-      "                      @@@         @@*@:::@:::@*@@        =@@                  ",
-      "                       +@@               =              @@@                   ",
-      "                        @@#@@@=                    -@@@#@-                    ",
-      "                       @@:+..::+:.*@@@@@@+..+@@@-.:-++=.=@                    ",
-      "                       @@...+++..++++=:@@..:-@.*++..:+.:+@@                   ",
-      "                       @@==++-.=+++++.@*@@+*-*@..:*++=..-@%                   ",
-      "                      @#@#@#@@@%.:.+*+@..@.:..@...#@@@@=@@                    ",
-      "          @#@%     @@+%@@*%=====%++*@@@++@+-..@=+*+===+=*@                    ",
-      "    %@@+@@@%@ ..*@-:@@ @+#==*=*==#+=%*@..@+++.@==+=+*=*+=@@                   ",
-      "   @++@  %@@ @++@@@   @@#=+%%=%%==+*=+@@@@++:-@#+=+*%+#%==@@                  ",
-      "  @++@@@-@::@:@**@    @%==+==*=====#=##=#@..+:@%=====#+=+=*@                  ",
-      "   @++@:@ @@@@@      @@@@@@+%=#=#===+=+#+*#@@+++==%=#=%@@@@@@                 ",
-      "   @+*@@:@@@::@ #@@    @ @@+=%==#*+=#++%*+*#*=+=#+*+=#=@@.+                   ",
-      " :@+@@@ @:#@   @@*     @+ @@@%*#==+=#=%=====+++=*==%@@@@.@@                   ",
-      "  @++@@+=*@@ @@*@     @ #  @@ @@# @@@*##*=%*%=+@@@@@ @= @  @                  ",
-      "   %@@ @@+++++@@       @  @  @ @@ @@ @@=*=#+@@@@ @@ @ .# .+                   ",
-      "         @@@              .+  @@@@@=@@@@@@@@ @@@@@  @                         ",
-    }
-    dashboard.section.header.val = logo
-    dashboard.section.header.opts.hl = pick_color()
+  opts = function()
+    local dashboard = require "alpha.themes.dashboard"
+    require "alpha.term"
+    dashboard.opts.opts.noautocmd = true
+    dashboard.section.terminal.opts.redraw = true
+    local path = "~/.config/nvim/dashboard/img.txt"
+    dashboard.section.terminal.command = "cat " .. path
+    dashboard.section.terminal.width = 100
+    dashboard.section.terminal.height = 36
     dashboard.section.buttons.val = {
-      dashboard.button("q", "󰩈  Quit", "<cmd>qa!<cr>"),
-      dashboard.button("p","  Projects", "<cmd>Telescope projects<cr>"),
-      dashboard.button("f","  Files", "<cmd>lua require('telescope').extensions.file_browser.file_browser({ path = '%:h:p', select_buffer = true })<cr>"),
+      dashboard.button("s","Sesiones", "<cmd>Telescope persisted<cr>"),
+      dashboard.button("f", "Archivos Recientes", "<cmd>Telescope oldfiles<cr>"),
+      dashboard.button("p", "Proyectos", "<cmd>Telescope projects"),
     }
-    alpha.setup(dashboard.opts)
-  end
+    dashboard.opts.layout = {
+      dashboard.section.terminal,
+      { type = "padding", val = 2 },
+      dashboard.section.buttons,
+    }
+    return dashboard
+  end,
+  config = function(_, opts)
+    require("alpha").setup(opts.config)
+  end,
 };

@@ -1,3 +1,5 @@
+--NOTE: Pluging para tener un explorador de archivos
+--https://github.com/nvim-tree/nvim-tree.lua
 return {
   "nvim-tree/nvim-tree.lua",
   version = "*",

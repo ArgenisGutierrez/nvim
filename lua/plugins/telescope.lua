@@ -28,6 +28,7 @@ return {
     require('telescope').load_extension('scope')
     require('telescope').load_extension('lazygit')
     require('telescope').load_extension('projects')
+    require('telescope').load_extension('persisted')
   end,
 }
 
