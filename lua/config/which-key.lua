@@ -95,4 +95,5 @@ wk.register({
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "󰙅 Files Explorer" },
   ["s"] = { "/", "󰱼 Search" },
   ["N"] = { "<cmd>Neogen<cr>", "󱪝  NeoGen" },
+  ["C"] = { "<cmd>CccPick<cr>", " Color Picker" },
 }, opts)
