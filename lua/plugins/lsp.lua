@@ -30,5 +30,8 @@ return {
     require("lspconfig").tsserver.setup({
       on_attach = on_attach,
     })
+    require('lspconfig').jqls.setup({
+      on_attach= on_attach,
+    })
   end
 }

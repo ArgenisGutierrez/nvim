@@ -1,3 +1,5 @@
+--NOTE: Plugin para resaltar colores y crear un picker
+--https://github.com/uga-rosa/ccc.nvim
 return {
   'uga-rosa/ccc.nvim',
   config = function()

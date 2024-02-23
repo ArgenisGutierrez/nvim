@@ -18,6 +18,7 @@ return {
       "css",
       "html",
       "pug",
+      "http",
       "json",
       "regex",
       "dockerfile",
