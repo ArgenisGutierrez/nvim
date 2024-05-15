@@ -10,7 +10,7 @@ return {
     local path = "~/.config/nvim/dashboard/img.txt"
     dashboard.section.terminal.command = "cat " .. path
     dashboard.section.terminal.width = 100
-    dashboard.section.terminal.height = 36
+    dashboard.section.terminal.height = 32
     dashboard.section.buttons.val = {
       dashboard.button("s","Sesiones", "<cmd>Telescope persisted<cr>"),
       dashboard.button("f", "Archivos Recientes", "<cmd>Telescope oldfiles<cr>"),

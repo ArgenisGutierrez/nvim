@@ -83,15 +83,6 @@ wk.register({
   }
 }, opts)
 
---Rest Nvim
-wk.register({
-  r= {
-    name = "󱂛 Rest",
-    r = {"<cmd>lua require('rest-nvim').run(RestNvim)<cr>", " Run Rest"},
-    p = {"<cmd>lua require('rest-nvim').run(RestNvimPreview)<cr>", " Run Preview"},
-    l = {"<cmd>lua require('rest-nvim').run(RestNvimLast)<cr>", " Run Last Req"},
-  }
-})
 --keymaps varios
 wk.register({
   ["w"] = { "<cmd>w<cr>", "󱣪 Save File" },
