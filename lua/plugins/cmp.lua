@@ -1,69 +1,84 @@
--- Manejo de buffers https://github.com/ghillb/cybu.nvim
+-- Autocompletado https://github.com/hrsh7th/nvim-cmp?tab=readme-ov-file
 return {
-  'ghillb/cybu.nvim',
-  branch = 'main',
+  'hrsh7th/nvim-cmp',
+  dependencies = {
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-cmdline',
+    'L3MON4D3/LuaSnip',
+    'saadparwaiz1/cmp_luasnip',
+    'neovim/nvim-lspconfig',
+    'rafamadriz/friendly-snippets',
+  },
+  event = "VeryLazy",
   config = function()
-    require("cybu").setup({
-      position = {
-        relative_to = "win", -- win, editor, cursor
-        anchor = "centerright", -- topleft, topcenter, topright,
-        -- centerleft, center, centerright,
-        -- bottomleft, bottomcenter, bottomright
-        vertical_offset = 10, -- vertical offset from anchor in lines
-        horizontal_offset = 0, -- vertical offset from anchor in columns
-        max_win_height = 5, -- height of cybu window in lines
-        max_win_width = 0.5, -- integer for absolute in columns
-        -- float for relative to win/editor width
+    local cmp = require('cmp')
+    local luasnip = require('luasnip')
+    local select_opts = { behavior = cmp.SelectBehavior.Select }
+    cmp.setup({
+      snippet = {
+        expand = function(args)
+          luasnip.lsp_expand(args.body)
+        end,
       },
-      style = {
-        path = "relative", -- absolute, relative, tail (filename only)
-        path_abbreviation = "none", -- none, shortened
-        border = "rounded", -- single, double, rounded, none
-        separator = " ", -- string used as separator
-        prefix = "…", -- string used as prefix for truncated paths
-        padding = 1, -- left & right padding in number of spaces
-        hide_buffer_id = true, -- hide buffer IDs in window
-        devicons = {
-          enabled = true, -- enable or disable web dev icons
-          colored = true, -- enable color for web dev icons
-          truncate = true, -- truncate wide icons to one char width
-        },
-        highlights = { -- see highlights via :highlight
-          current_buffer = "CybuFocus", -- current / selected buffer
-          adjacent_buffers = "CybuAdjacent", -- buffers not in focus
-          background = "CybuBackground", -- window background
-          border = "CybuBorder", -- border of the window
-        },
+      window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
       },
-      behavior = { -- set behavior for different modes
-        mode = {
-          default = {
-            switch = "immediate", -- immediate, on_close
-            view = "paging", -- paging, rolling
-          },
-          last_used = {
-            switch = "on_close", -- immediate, on_close
-            view = "paging", -- paging, rolling
-          },
-          auto = {
-            view = "rolling", -- paging, rolling
-          },
-        },
-        show_on_autocmd = false, -- event to trigger cybu (eg. "BufEnter")
+      mapping = {
+        --Confirmar seleccion
+        ['<CR>'] = cmp.mapping.confirm({ select = false }),
+        --Abrir autocompletado
+        ['<C-space>'] = cmp.mapping.complete(),
+
+        --Siguiente opcion
+        ['<Tab>'] = cmp.mapping(function(fallback)
+          local col = vim.fn.col('.') - 1
+          if cmp.visible() then
+            cmp.select_next_item(select_opts)
+          elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+            fallback()
+          else
+            cmp.complete()
+          end
+        end, { 'i', 's' }),
+
+        --Anterior opcion
+        ['<S-Tab>'] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            cmp.select_prev_item(select_opts)
+          else
+            fallback()
+          end
+        end, { 'i', 's' }),
       },
-      display_time = 750,    -- time the cybu window is displayed
-      exclude = {            -- filetypes, cybu will not be active
-        "neo-tree",
-        "fugitive",
-        "qf",
+      --Aqui se agregan todos los sources para autocompletdo
+      sources = {
+        { name = 'nvim_lsp' },
+        { name = 'path' },
+        { name = 'luasnip' },
+        { name = 'buffer' },
+        { name = 'friendly-snippets' }
       },
-      filter = {
-        unlisted = true,     -- filter & fallback for unlisted buffers
-      },
-      fallback = function() end, -- arbitrary fallback function
-      -- used in excluded filetypes
     })
-    vim.keymap.set('n','<s-l>','<cmd>CybuNext<cr>')
-    vim.keymap.set('n','<s-h>','<cmd>CybuPrev<cr>')
+    --Configuraciones de sources especificas
+    -- Config de linea de comandos
+    cmp.setup.cmdline({ '/', '?' }, {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = {
+        { name = 'buffer' }
+      }
+    })
+
+    -- Config de los paths
+    cmp.setup.cmdline(':', {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = cmp.config.sources({
+        { name = 'path' }
+      }, {
+        { name = 'cmdline' }
+      })
+    })
   end
 }
