@@ -11,7 +11,7 @@ local opts = {
 --keymaps varios
 wk.register({
   ["w"] = { "<cmd>w<cr>", "󱣪 Save File" },
-  ["q"] = { "<cmd>wq!<cr>", "󰩈 Exit" },
+  ["q"] = { "<cmd>q!<cr>", "󰩈 Exit" },
   ["c"] = { "<cmd>bd<cr>", " Close File" },
   ["M"] = { "<cmd>Mason<cr>", " Mason" },
   ["L"] = { "<cmd>Lazy<cr>", " Lazy" },

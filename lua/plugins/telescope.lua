@@ -7,6 +7,7 @@ return {
     'BurntSushi/ripgrep',
     'nvim-tree/nvim-web-devicons',
     'nvim-treesitter/nvim-treesitter',
+    'nvim-telescope/telescope-live-grep-args.nvim',
     {
       'nvim-telescope/telescope-fzf-native.nvim',
       build = 'make'

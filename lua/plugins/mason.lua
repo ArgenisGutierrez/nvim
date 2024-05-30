@@ -4,6 +4,7 @@ return {
 	dependencies = {
 		"neovim/nvim-lspconfig"
 	},
+  lazy = true,
 	opts = {
 		ui = {
         icons = {
