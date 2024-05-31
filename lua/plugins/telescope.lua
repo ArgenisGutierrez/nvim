@@ -26,6 +26,7 @@ return {
     require('telescope').setup(opts)
     require('telescope').load_extension('lazygit')
     require('telescope').load_extension('projects')
+    require('telescope').load_extension('neoclip')
 
     local wk = require('which-key')
 
