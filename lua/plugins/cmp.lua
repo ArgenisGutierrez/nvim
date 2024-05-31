@@ -59,7 +59,8 @@ return {
         { name = 'path' },
         { name = 'luasnip' },
         { name = 'buffer' },
-        { name = 'friendly-snippets' }
+        { name = 'friendly-snippets' },
+        { name = 'codeium'},
       },
     })
     --Configuraciones de sources especificas
