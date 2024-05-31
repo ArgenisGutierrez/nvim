@@ -32,8 +32,7 @@ return {
             return {
               exe = "stylua",
               args = {
-                "--search-parent-directories",
-                "--stdin-filepath",
+                "--search-parent-directories", "--stdin-filepath",
                 util.escape_path(util.get_current_buffer_file_path()),
                 "--",
                 "-",

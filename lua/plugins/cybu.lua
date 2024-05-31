@@ -5,8 +5,8 @@ return {
   config = function()
     require("cybu").setup({
       position = {
-        relative_to = "win", -- win, editor, cursor
-        anchor = "centerright", -- topleft, topcenter, topright,
+        relative_to = "editor", -- win, editor, cursor
+        anchor = "bottomright", -- topleft, topcenter, topright,
         -- centerleft, center, centerright,
         -- bottomleft, bottomcenter, bottomright
         vertical_offset = 10, -- vertical offset from anchor in lines

@@ -38,7 +38,7 @@ return {
       expr = false,
     }
     wk.register({
-      ["o"] = { "<cmd>Oil<cr>", "Oil" }
+      ["o"] = { "<cmd>Oil<cr>", "󰺔 Oil" }
     }, opts)
   end
 }

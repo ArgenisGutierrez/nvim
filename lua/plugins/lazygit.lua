@@ -10,20 +10,20 @@ return {
 
     local wk = require('which-key')
     local opts = {
-    mode = "n",
-    prefix = "<leader>",
-    buffer = nil,
-    silent = true,
-    noremap = true,
-    nowait = false,
-    expr = false,
+      mode = "n",
+      prefix = "<leader>",
+      buffer = nil,
+      silent = true,
+      noremap = true,
+      nowait = false,
+      expr = false,
     }
 
     wk.register({
-  g = {
-    name = "󰊢 Git",
-    g = { "<cmd>:LazyGit<cr>", " LazyGit" },
-  }
-}, opts)
+      g = {
+        name = "󰊢 Git",
+        g = { "<cmd>:LazyGit<cr>", " LazyGit" },
+      }
+    }, opts)
   end,
 }
