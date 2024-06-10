@@ -14,6 +14,9 @@ return {
       },
       outline = {
         layout = 'float',
+      },
+      ui = {
+        code_action = ''
       }
     })
 
