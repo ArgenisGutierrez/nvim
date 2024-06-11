@@ -5,6 +5,12 @@ vim.o.termguicolors = true
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+--identacion
+vim.o.tabstop = 2
+vim.o.softtabstop = 2
+vim.o.expandtab = true
+vim.o.shiftwidth = 2
+
 
 -- Keymaps
 local keymap = vim.keymap
