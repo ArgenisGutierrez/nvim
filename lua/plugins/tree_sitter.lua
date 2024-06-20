@@ -3,7 +3,10 @@ return {
   'nvim-treesitter/nvim-treesitter',
   build = ':TSUpdate',
   event = 'VeryLazy',
-  main = 'nvim-treesitter.configs',
+  dependencies = {
+    'windwp/nvim-ts-autotag',
+  },
+  -- main = 'nvim-treesitter.configs',
   opts = {
     ensure_installed = {
       "lua",
@@ -12,6 +15,7 @@ return {
       "markdown_inline",
       "javascript",
       "typescript",
+      "tsx",
       "php",
       "css",
       "html",

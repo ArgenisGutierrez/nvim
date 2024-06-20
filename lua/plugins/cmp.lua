@@ -10,6 +10,8 @@ return {
     'saadparwaiz1/cmp_luasnip',
     'neovim/nvim-lspconfig',
     'rafamadriz/friendly-snippets',
+    'luckasRanarison/tailwind-tools.nvim',
+    'onsails/lspkind-nvim',
   },
   event = "VeryLazy",
   config = function()
@@ -60,8 +62,13 @@ return {
         { name = 'luasnip' },
         { name = 'buffer' },
         { name = 'friendly-snippets' },
-        { name = 'codeium'},
+        { name = 'codeium' },
       },
+      formatting = {
+        format = require('lspkind').cmp_format({
+          before = require('tailwind-tools.cmp').lspkind_format
+        })
+      }
     })
     --Configuraciones de sources especificas
     -- Config de linea de comandos
@@ -81,5 +88,5 @@ return {
         { name = 'cmdline' }
       })
     })
-  end
+  end,
 }
