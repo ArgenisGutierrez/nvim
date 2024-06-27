@@ -1,7 +1,7 @@
 return {
   "luckasRanarison/tailwind-tools.nvim",
-  -- dependencies = { "nvim-treesitter/nvim-treesitter" },
-  after = { "nvim-treesitter" },
+  dependencies = { "nvim-treesitter/nvim-treesitter" },
+  lazy = true,
   config = function()
     require("tailwind-tools").setup({
       document_color = {

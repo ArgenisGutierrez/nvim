@@ -49,6 +49,7 @@ return {
         G = { "<cmd>Telescope git_branches<cr>", " Git Branchs" },
         t = { "<cmd>Telescope projects<cr>", " Projects" },
         h = { "<cmd>Telescope help_tags<cr>", "󰮥 Help" },
+        r = { "<cmd>Telescope registers<cr>", "󱛣 Registers" },
         p = {
           function()
             require("telescope.builtin").find_files({
