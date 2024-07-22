@@ -28,17 +28,8 @@ return {
     })
     -- Keymaps
     local wk = require('which-key')
-    local opts = {
-      mode = "n",
-      prefix = "<leader>",
-      buffer = nil,
-      silent = true,
-      noremap = true,
-      nowait = false,
-      expr = false,
-    }
-    wk.register({
-      ["o"] = { "<cmd>Oil<cr>", "󰺔 Oil" }
-    }, opts)
+    wk.add({
+      { "<leader>o", "<cmd>Oil<CR>", desc = "󰺔 File Manager", mode = "n" },
+    })
   end
 }

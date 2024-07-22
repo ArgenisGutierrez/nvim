@@ -31,7 +31,7 @@ return {
       options_width = 20,
       preview_height = 12,
       -- window positions
-      anchor = 'center', -- Set to one of:
+      anchor = 'center',   -- Set to one of:
       -- 'center' | 'top' | 'bottom' | 'left' | 'right' | 'top_left' | 'top_right' | 'bottom_left' | 'bottom_right'
       vertical_offset = 0, -- offsets are relative to anchors
       horizontal_offset = 0,
@@ -60,23 +60,12 @@ return {
     })
 
     local wk = require('which-key')
-    local opts = {
-      mode = "n",     -- NORMAL mode
-      prefix = "<leader>",
-      buffer = nil,   -- Global mappings. Specify a buffer number for buffer local mappings
-      silent = true,  -- use `silent` when creating keymaps
-      noremap = true, -- use `noremap` when creating keymaps
-      nowait = false, -- use `nowait` when creating keymaps
-      expr = false,   -- use `expr` when creating keymaps
-    }
     --keymaps varios
-    wk.register({
-      m = {
-        name = "󰛔 Muren",
-        o = {"<cmd>MurenOpen<cr>"," Open Muren"},
-        c = {"<cmd>MurenClose<cr>"," Close Muren"},
-        t = {"<cmd>MurenToggle<cr>"," Toggle Muren"},
-      }
-    }, opts)
+    wk.add({
+      { "<leader>m", group = "󰛔 Muren" },
+      { "<leader>mo", "<cmd>MurenOpen<cr>", desc = " Open Muren", mode = "n" },
+      { "<leader>mc", "<cmd>MurenClose<cr>", desc = " Close Muren", mode = "n" },
+      { "<leader>mt", "<cmd>MurenToggle<cr>", desc = " Toggle Muren", mode = "n" },
+    })
   end,
 }

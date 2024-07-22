@@ -29,47 +29,38 @@ return {
     require('telescope').load_extension('neoclip')
 
     local wk = require('which-key')
-
     -- Keymaps
-    local opts = {
-      mode = "n",
-      prefix = "<leader>",
-      buffer = nil,
-      silent = true,
-      noremap = true,
-      nowait = false,
-      expr = false,
-    }
-    wk.register({
-      f = {
-        name = "󰭎 Telescope",
-        f = { "<cmd>lua require'telescope.builtin'.find_files({ hidden = true })<cr>", " Find Files" },
-        s = { "<cmd>Telescope git_status<cr>", "󱖫 Git Status" },
-        c = { "<cmd>Telescope git_bcommits<cr>", " Git Commits in File" },
-        G = { "<cmd>Telescope git_branches<cr>", " Git Branchs" },
-        t = { "<cmd>Telescope projects<cr>", " Projects" },
-        h = { "<cmd>Telescope help_tags<cr>", "󰮥 Help" },
-        r = { "<cmd>Telescope registers<cr>", "󱛣 Registers" },
-        p = {
-          function()
-            require("telescope.builtin").find_files({
-              prompt_title = "Plugins",
-              cwd = "~/.config/nvim/lua/plugins",
-              attach_mappings = function(_, map)
-                local actions = require("telescope.actions")
-                local action_state = require("telescope.actions.state")
-                map("i", "<c-y>", function(prompt_bufnr)
-                  local new_plugin = action_state.get_current_line()
-                  actions.close(prompt_bufnr)
-                  vim.cmd(string.format("edit ~/.config/nvim/lua/plugins/%s.lua", new_plugin))
-                end)
-                return true
-              end
-            })
-          end, "󰏖 Plugins"
-        }
+    wk.add({
+      { "<leader>f", group = "󰭎 Telescope" },
+      { "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files({ hidden = true })<cr>", desc = " Find Files", mode = "n" },
+      { "<leader>fs", "<cmd>Telescope git_status<cr>", desc = "󱖫 Git Status", mode = "n" },
+      { "<leader>fc", "<cmd>Telescope git_bcommits<cr>", desc = " Git Commits in File", mode = "n" },
+      { "<leader>fg", "<cmd>Telescope git_branches<cr>", desc = " Git Branchs", mode = "n" },
+      { "<leader>ft", "<cmd>Telescope projects<cr>", desc = " Projects", mode = "n" },
+      { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "󰮥 Help", mode = "n" },
+      { "<leader>fr", "<cmd>Telescope registers<cr>", desc = "󱛣 Registers", mode = "n" },
+      {
+        "<leader>fp",
+        function()
+          require("telescope.builtin").find_files({
+            prompt_title = "Plugins",
+            cwd = "~/.config/nvim/lua/plugins",
+            attach_mappings = function(_, map)
+              local actions = require("telescope.actions")
+              local action_state = require("telescope.actions.state")
+              map("i", "<c-y>", function(prompt_bufnr)
+                local new_plugin = action_state.get_current_line()
+                actions.close(prompt_bufnr)
+                vim.cmd(string.format("edit ~/.config/nvim/lua/plugins/%s.lua", new_plugin))
+              end)
+              return true
+            end
+          })
+        end,
+        desc = "󰏖 Plugins",
+        mode = "n"
       }
-    }, opts)
+    })
   end
 
 }

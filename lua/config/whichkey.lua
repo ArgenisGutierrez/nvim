@@ -1,18 +1,11 @@
 local wk = require('which-key')
-local opts = {
-  mode = "n", -- NORMAL mode
-  prefix = "<leader>",
-  buffer = nil,   -- Global mappings. Specify a buffer number for buffer local mappings
-  silent = true,  -- use `silent` when creating keymaps
-  noremap = true, -- use `noremap` when creating keymaps
-  nowait = false, -- use `nowait` when creating keymaps
-  expr = false,   -- use `expr` when creating keymaps
-}
 --keymaps varios
-wk.register({
-  ["w"] = { "<cmd>w<cr>", "󱣪 Save File" },
-  ["q"] = { "<cmd>q!<cr>", "󰩈 Exit" },
-  ["c"] = { "<cmd>bd<cr>", " Close File" },
-  ["M"] = { "<cmd>Mason<cr>", " Mason" },
-  ["L"] = { "<cmd>Lazy<cr>", " Lazy" },
-}, opts)
+wk.add({
+  { "<leader>w", "<cmd>w<cr>", desc = "󱣪 Save File" },
+  { "<leader>q", "<cmd>q!<cr>", desc="󰩈 Exit" },
+  { "<leader>c", "<cmd>bd<cr>", desc=" Close File" },
+  { "<leader>M", "<cmd>Mason<cr>", desc=" Mason" },
+  { "<leader>L", "<cmd>Lazy<cr>", desc=" Lazy" },
+  { "<leader>h", "<cmd>noh<cr>", desc="󱎸 No Highlight" },
+  { "<leader>s", "z=", desc="  Spelling" },
+})
