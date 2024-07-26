@@ -10,6 +10,7 @@ return {
       terminal = true,
       overrides = {
         LineNr = { fg = '#3fa6ff' },
+        Comment = { fg = '#ecefef' },
       }
     })
     vim.cmd([[colorscheme ayu-dark]])
