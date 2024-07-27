@@ -11,7 +11,7 @@ return {
     local wk = require('which-key')
     wk.add({
       { "<leader>g", group = "󰊢 Git" },
-      { "<leader>gg", "<cmd>:LazyGit<cr>", desc = " LazyGit", mode = "n" }
+      { "<leader>gg", "<cmd>:LazyGitCurrentFile<cr>", desc = " LazyGit", mode = "n" }
     })
   end,
 }
