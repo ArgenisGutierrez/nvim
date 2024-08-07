@@ -10,7 +10,7 @@ return {
       terminal = true,
       overrides = {
         LineNr = { fg = '#3fa6ff' },
-        Comment = { fg = '#09a1ac' },
+        Comment = { fg = '#55bcc8' },
         Normal = { fg = '#ecefef' },
       }
     })
