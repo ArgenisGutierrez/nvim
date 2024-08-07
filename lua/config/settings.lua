@@ -24,4 +24,3 @@ keymap.set("n", "<C-l>", "<C-w>l")
 -- Split window
 keymap.set("n", "-", ":split<Return>", opts)
 keymap.set("n", "|", ":vsplit<Return>", opts)
-
