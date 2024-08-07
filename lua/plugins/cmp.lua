@@ -6,8 +6,8 @@ return {
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-cmdline',
-    'L3MON4D3/LuaSnip',
     'saadparwaiz1/cmp_luasnip',
+    'L3MON4D3/LuaSnip',
     'neovim/nvim-lspconfig',
     'rafamadriz/friendly-snippets',
     'luckasRanarison/tailwind-tools.nvim',
@@ -54,6 +54,10 @@ return {
             fallback()
           end
         end, { 'i', 's' }),
+
+        --Scroll Docs
+        ['<C-k>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-j>'] = cmp.mapping.scroll_docs(4),
       },
       --Aqui se agregan todos los sources para autocompletdo
       sources = {
