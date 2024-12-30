@@ -1,8 +1,7 @@
 -- Plugin de peticiones http https://github.com/rest-nvim/rest.nvim
 return {
   "rest-nvim/rest.nvim",
-  ft = "http",
-  dependencies = { "luarocks.nvim" },
+  dependencies = { "nvim-treesitter/nvim-treesitter" },
   config = function()
     require("rest-nvim").setup({
       result = {
