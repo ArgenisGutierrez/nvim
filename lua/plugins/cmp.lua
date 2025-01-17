@@ -66,7 +66,6 @@ return {
         { name = 'luasnip' },
         { name = 'buffer' },
         { name = 'friendly-snippets' },
-        { name = 'codeium' },
       },
       formatting = {
         format = require('lspkind').cmp_format({
