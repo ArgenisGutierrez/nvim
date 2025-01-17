@@ -1,7 +1,8 @@
+-- Plugin para resaltar los bloques de codigo https://github.com/shellRaining/hlchunk.nvim
 return {
-  'shellRaining/hlchunk.nvim',
+  "shellRaining/hlchunk.nvim",
   config = function()
-    require('hlchunk').setup({
+    require("hlchunk").setup({
       chunk = {
         enable = true,
         chars = {
@@ -27,5 +28,5 @@ return {
         style = "#3fa6ff",
       },
     })
-  end
+  end,
 }
