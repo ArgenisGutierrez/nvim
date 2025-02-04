@@ -6,9 +6,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.g.clipboard = unnamed
 -- Remapear 'y' para usar el portapapeles del sistema
-vim.api.nvim_set_keymap('n', 'y', '"+y', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('v', 'y', '"+y', { noremap = true, silent = true })
-
+vim.api.nvim_set_keymap("n", "y", '"+y', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "y", '"+y', { noremap = true, silent = true })
 
 --identacion
 vim.o.tabstop = 2

@@ -1,24 +1,31 @@
 {
-	"name": "my-snippets",
-	"contributes": {
-		"snippets": [
+  "name": "my-snippets",
+  "contributes": {
+    "snippets": [
       {
         "language": [
           "javascript",
-          "javascriptreact",
           "typescript",
+          "javascriptreact",
           "typescriptreact"
         ],
         "path": "./js.json"
       },
-			{
-				"language": [
-					"css",
+      {
+        "language": [
+          "javascriptreact",
+          "typescriptreact"
+        ],
+        "path": "./jsx.json"
+      },
+      {
+        "language": [
+          "css",
           "scss",
           "sass"
-				],
-				"path": "./css.json"
-			}
-		]
-	}
+        ],
+        "path": "./css.json"
+      }
+    ]
+  }
 }
