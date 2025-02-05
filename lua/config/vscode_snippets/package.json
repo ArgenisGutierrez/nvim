@@ -25,6 +25,13 @@
           "sass"
         ],
         "path": "./css.json"
+      },
+      {
+        "language": [
+          "go",
+          "gomod"
+        ],
+        "path": "./go.json"
       }
     ]
   }
