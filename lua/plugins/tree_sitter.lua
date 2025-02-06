@@ -1,39 +1,30 @@
--- Resaltado de syntaxis de lenguajes https://github.com/nvim-treesitter/nvim-treesitter
 return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
-  event = "VeryLazy",
-  dependencies = {
-    "windwp/nvim-ts-autotag",
-  },
-  -- main = 'nvim-treesitter.configs',
-  opts = {
-    ensure_installed = {
-      "lua",
-      "luadoc",
-      "markdown",
-      "markdown_inline",
-      "javascript",
-      "typescript",
-      "tsx",
-      "php",
-      "css",
-      "html",
-      "pug",
-      "http",
-      "json",
-      "regex",
-      "dockerfile",
-      "vimdoc",
-    },
-    highlight = {
-      enable = true,
-    },
-    ident = {
-      enable = true,
-    },
-    fold = {
-      enable = true,
-    },
-  },
+  config = function()
+    require("nvim-treesitter.configs").setup({
+      -- Lista de parsers a instalar
+      ensure_installed = {},
+
+      -- Instalar parsers automáticamente
+      auto_install = true,
+
+      -- Habilitar resaltado de sintaxis
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+      },
+
+      -- Habilitar indentación automática
+      indent = {
+        enable = true,
+      },
+
+      -- Habilitar plegado de código
+      fold = {
+        enable = true,
+      },
+    })
+  end,
 }
+
