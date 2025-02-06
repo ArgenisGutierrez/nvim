@@ -1,10 +1,10 @@
 -- Resaltado de syntaxis de lenguajes https://github.com/nvim-treesitter/nvim-treesitter
 return {
-  'nvim-treesitter/nvim-treesitter',
-  build = ':TSUpdate',
-  event = 'VeryLazy',
+  "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
+  event = "VeryLazy",
   dependencies = {
-    'windwp/nvim-ts-autotag',
+    "windwp/nvim-ts-autotag",
   },
   -- main = 'nvim-treesitter.configs',
   opts = {
@@ -24,12 +24,16 @@ return {
       "json",
       "regex",
       "dockerfile",
-      "vimdoc" },
+      "vimdoc",
+    },
     highlight = {
       enable = true,
     },
     ident = {
       enable = true,
     },
-  }
+    fold = {
+      enable = true,
+    },
+  },
 }
