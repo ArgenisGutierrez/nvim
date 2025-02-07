@@ -1,8 +1,6 @@
--- Saltar a partes especificas facilmente https://github.com/ggandor/leap.nvim
+-- Saltar a partes especificas facilmente https://github.com/folke/flash.nvim
 return {
   "folke/flash.nvim",
-  event = "VeryLazy",
-  opts = {},
   keys = {
     {
       "s",

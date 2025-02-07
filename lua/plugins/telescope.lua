@@ -1,7 +1,6 @@
 -- Buscador de todo https://github.com/nvim-telescope/telescope.nvim
 return {
   "nvim-telescope/telescope.nvim",
-  event = "VeryLazy",
   dependencies = {
     "nvim-lua/plenary.nvim",
     "BurntSushi/ripgrep",
@@ -24,7 +23,6 @@ return {
   },
   config = function(opts)
     require("telescope").setup(opts)
-    require("telescope").load_extension("lazygit")
     require("telescope").load_extension("projects")
 
     local wk = require("which-key")

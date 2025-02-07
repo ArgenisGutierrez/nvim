@@ -4,6 +4,7 @@ return {
   enabled = true,
   config = function()
     require('nvim-biscuits').setup({
+      cursor_line_only = true,
       default_config = {
         max_length = 60,
         min_distance = 5,
@@ -19,6 +20,6 @@ return {
         },
       }
     })
-    vim.cmd([[highlight BiscuitColor guifg=#b3b3b3]])
+    vim.cmd([[highlight BiscuitColor guifg=#ffffff]])
   end
 }

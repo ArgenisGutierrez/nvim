@@ -2,6 +2,15 @@
 return {
   'numToStr/Comment.nvim',
   config = true,
+  keys = {
+    {"gcc", mode = "n"},
+    {"gbc", mode = "n"},
+    {"gcO", mode = "n"},
+    {"gco", mode = "n"},
+    {"gcA", mode = "n"},
+    {"gc", mode = "n"},
+    {"gb", mode = "n"},
+  },
   opts = {
     padding = true,
     sticky = true,
@@ -26,5 +35,4 @@ return {
     pre_hook = nil,
     post_hook = nil,
   },
-  lazy = false,
 }

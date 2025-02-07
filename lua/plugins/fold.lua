@@ -3,6 +3,13 @@ return {
   dependencies = {
     "kevinhwang91/promise-async",
   },
+  keys = {
+    {"zo", mode ="n"},
+    {"zo", mode ="n"},
+    {"zc", mode ="n"},
+    {"zc", mode ="n"},
+    {"zM", mode ="n"},
+  },
   config = function()
     require("ufo").setup({
       preview = {

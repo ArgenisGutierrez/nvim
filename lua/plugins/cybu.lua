@@ -2,6 +2,7 @@
 return {
   'ghillb/cybu.nvim',
   branch = 'main',
+  event = "BufAdd",
   config = function()
     require("cybu").setup({
       position = {

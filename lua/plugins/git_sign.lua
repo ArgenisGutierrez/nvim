@@ -1,7 +1,7 @@
 -- Senales de git en el line number https://github.com/lewis6991/gitsigns.nvim
 return {
 	"lewis6991/gitsigns.nvim",
-	config = true,
+  event = "VeryLazy",
 	opts = {
 		signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
 		numhl      = true, -- Toggle with `:Gitsigns toggle_numhl`
