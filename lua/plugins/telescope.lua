@@ -67,5 +67,7 @@ return {
         mode = "n",
       },
     })
+    vim.cmd("highlight TelescopeBorder guibg=none")
+    vim.cmd("highlight TelescopeTitle guibg=none")
   end,
 }
