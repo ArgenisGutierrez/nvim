@@ -24,14 +24,28 @@ return {
     require("luasnip.loaders.from_vscode").lazy_load()
 
     cmp.setup({
+      view = {
+        entries = "custom", -- can be "custom", "wildmenu" or "native"
+      },
+      window = {
+        completion = vim.tbl_extend("force", cmp.config.window.bordered(), {
+          border = "rounded", -- Borde redondeado
+          winblend = 0,  -- Transparencia (0 = opaco)
+          winhighlight = "Normal:CmpNormal,CursorLine:PmenuSel,FloatBorder:CmpBorder",
+          scrollbar = {
+            ch = "▐", -- Caracter para la scrollbar
+          },
+        }),
+        documentation = vim.tbl_extend("force", cmp.config.window.bordered(), {
+          border = "rounded",
+          winblend = 0,
+          winhighlight = "Normal:CmpDoc,FloatBorder:CmpDocBorder",
+        }),
+      },
       snippet = {
         expand = function(args)
           luasnip.lsp_expand(args.body)
         end,
-      },
-      window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
       },
       mapping = cmp.mapping.preset.insert({
         ["<CR>"] = cmp.mapping.confirm({ select = false }),
@@ -64,11 +78,14 @@ return {
         { name = "buffer" },
       }),
       formatting = {
-        format = lspkind.cmp_format({
-          mode = "symbol_text",    -- Muestra ícono y texto
-          maxwidth = 50,           -- Máxima longitud para abreviar sugerencias
-          before = tailwind_cmp_format, -- Pre-procesa el formato con tailwind-tools
-        }),
+        fields = { "kind", "abbr", "menu" },
+        format = function(entry, vim_item)
+          local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+          local strings = vim.split(kind.kind, "%s", { trimempty = true })
+          kind.kind = " " .. (strings[1] or "") .. " "
+          kind.menu = "    (" .. (strings[2] or "") .. ")"
+          return kind
+        end,
       },
     })
 
