@@ -22,7 +22,12 @@ keymap.set("n", "<C-h>", "<C-w>h")
 keymap.set("n", "<C-k>", "<C-w>k")
 keymap.set("n", "<C-j>", "<C-w>j")
 keymap.set("n", "<C-l>", "<C-w>l")
+-- Move Insert Mode
+keymap.set("i", "<M-h>", "<Left>")
+keymap.set("i", "<M-j>", "<Down>")
+keymap.set("i", "<M-k>", "<Up>")
+keymap.set("i", "<M-l>", "<Right>")
 
 -- Split window
-keymap.set("n", "-", ":split<Return>", opts)
-keymap.set("n", "|", ":vsplit<Return>", opts)
+keymap.set("n", "-", ":split<Return>")
+keymap.set("n", "|", ":vsplit<Return>")
