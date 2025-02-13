@@ -4,7 +4,8 @@ return {
   "akinsho/toggleterm.nvim",
   version = "*",
   keys = {
-    { "<C-\\>", mode = { "n", "i" }, desc = "Toggle Terminal" },
+    { "<leader>t", "<cmd>ToggleTerm<cr>", mode = { "n" },          desc = "Toggle Terminal" },
+    { "<C-\\>",    mode = { "n", "i" },   desc = "Toggle Terminal" },
   },
   config = function()
     -- Configuración óptima para ToggleTerm.nvim

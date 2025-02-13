@@ -24,6 +24,7 @@ return {
   config = function(opts)
     require("telescope").setup(opts)
     require("telescope").load_extension("projects")
+    require("telescope").load_extension("neoclip")
 
     local wk = require("which-key")
     -- Keymaps
@@ -44,7 +45,7 @@ return {
       { "<leader>fg", "<cmd>Telescope git_branches<cr>", desc = " Git Branchs", mode = "n" },
       { "<leader>ft", "<cmd>Telescope projects<cr>", desc = " Projects", mode = "n" },
       { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "󰮥 Help", mode = "n" },
-      { "<leader>fr", "<cmd>Telescope registers<cr>", desc = "󱛣 Registers", mode = "n" },
+      { "<leader>fr", "<cmd>Telescope neoclip<cr>", desc = "󱛣 Registers", mode = "n" },
       {
         "<leader>fp",
         function()
