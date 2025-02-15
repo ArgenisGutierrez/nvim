@@ -1,7 +1,7 @@
 -- Manejo de buffers https://github.com/ghillb/cybu.nvim
 return {
-  'ghillb/cybu.nvim',
-  branch = 'main',
+  "ghillb/cybu.nvim",
+  branch = "main",
   event = "BufAdd",
   config = function()
     require("cybu").setup({
@@ -33,7 +33,7 @@ return {
           current_buffer = "CybuFocus", -- current / selected buffer
           adjacent_buffers = "CybuAdjacent", -- buffers not in focus
           background = "CybuBackground", -- window background
-          border = "CybuBorder", -- border of the window
+          border = "none", -- border of the window
         },
       },
       behavior = { -- set behavior for different modes
@@ -59,12 +59,12 @@ return {
         "qf",
       },
       filter = {
-        unlisted = true,     -- filter & fallback for unlisted buffers
+        unlisted = true,      -- filter & fallback for unlisted buffers
       },
       fallback = function() end, -- arbitrary fallback function
       -- used in excluded filetypes
     })
-    vim.keymap.set('n','<s-l>','<cmd>CybuNext<cr>')
-    vim.keymap.set('n','<s-h>','<cmd>CybuPrev<cr>')
-  end
+    vim.keymap.set("n", "<s-l>", "<cmd>CybuNext<cr>")
+    vim.keymap.set("n", "<s-h>", "<cmd>CybuPrev<cr>")
+  end,
 }

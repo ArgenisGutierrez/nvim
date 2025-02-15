@@ -39,5 +39,7 @@ return {
         mode = "n",
       },
     })
+    vim.cmd("highlight HoverBorder guibg=none")
+    vim.cmd("highlight HoverNormal guibg=none")
   end,
 }
