@@ -31,3 +31,8 @@ keymap.set("i", "<M-l>", "<Right>")
 -- Split window
 keymap.set("n", "-", ":split<Return>")
 keymap.set("n", "|", ":vsplit<Return>")
+
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = { "*.http", "*.rest" },
+  command = "set filetype=http",
+})
