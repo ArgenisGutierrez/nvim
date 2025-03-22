@@ -76,6 +76,7 @@ return {
         { name = "luasnip" },
         { name = "path" },
         { name = "buffer" },
+        { name = "codeium" },
       }),
       formatting = {
         fields = { "kind", "abbr", "menu" },
@@ -86,6 +87,14 @@ return {
           kind.menu = "    (" .. (strings[2] or "") .. ")"
           return kind
         end,
+      },
+      formatting = {
+        format = require("lspkind").cmp_format({
+          mode = "symbol",
+          maxwidth = 50,
+          ellipsis_char = "...",
+          symbol_map = { Codeium = "󱚣" },
+        }),
       },
     })
 
