@@ -4,7 +4,6 @@ return {
   dependencies = {
     "williamboman/mason.nvim",
     "nvimtools/none-ls.nvim",
-    "jose-elias-alvarez/null-ls.nvim",
   },
   config = function()
     require("mason-null-ls").setup({
