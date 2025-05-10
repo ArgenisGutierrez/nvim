@@ -36,3 +36,5 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   pattern = { "*.http", "*.rest" },
   command = "set filetype=http",
 })
+
+vim.lsp.buf.format({ async = false })
