@@ -11,4 +11,8 @@ wk.add({
   { "<leader>g", group = "󰊢 Git" },
   { "<leader>m", group = "󰛔 Muren" },
   { "<leader>r", group = " Http Nvim" },
+  { "<leader>p", group = " Octo" },
+  { "<leader>pp", group = " Pull Requests" },
+  { "<leader>pr", group = "󰳐 Repositories" },
+  { "<leader>pi", group = " Issues" },
 })
