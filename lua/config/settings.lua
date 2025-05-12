@@ -32,9 +32,4 @@ keymap.set("i", "<M-l>", "<Right>")
 keymap.set("n", "-", ":split<Return>")
 keymap.set("n", "|", ":vsplit<Return>")
 
-vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-  pattern = { "*.http", "*.rest" },
-  command = "set filetype=http",
-})
-
-vim.lsp.buf.format({ async = false })
+vim.lsp.buf.format({ async = true })
