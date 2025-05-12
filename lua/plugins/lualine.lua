@@ -15,6 +15,7 @@ return {
           icon = "", -- Set the icon for the mode
         },
       },
+      lualine_z = { require("http-nvim").http_env_lualine_component },
     },
   },
 }

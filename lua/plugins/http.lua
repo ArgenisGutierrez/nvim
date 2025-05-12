@@ -1,4 +1,4 @@
--- Plugin de peticiones http https://github.com/rest-nvim/rest.nvim
+-- Plugin de peticiones http https://github.com/rodrigoscc/http.nvim
 return {
   "rodrigoscc/http.nvim",
   keys = {
