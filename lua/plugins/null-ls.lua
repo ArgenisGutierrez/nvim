@@ -18,6 +18,15 @@ return {
           })
         end
       end,
+      sources = {
+        -- ejemplos para agregar fuentes de formateo y diagnostico propios
+        -- null_ls.builtins.formatting.djlint.with({
+        --   filetypes = { "htmlangular" },
+        -- }),
+        -- null_ls.builtins.diagnostics.djlint.with({
+        --   filetypes = { "htmlangular" },
+        -- }),
+      },
     })
   end,
 }

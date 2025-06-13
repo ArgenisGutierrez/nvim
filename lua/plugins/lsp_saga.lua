@@ -28,7 +28,7 @@ return {
       { "<leader>le", "<cmd>Lspsaga diagnostic_jump_next<cr>", desc = "󰩂 Diagnostic", mode = "n" },
       { "<leader>lk", "<cmd>Lspsaga hover_doc<cr>", desc = " Definicion", mode = "n" },
       { "<leader>lg", "<cmd>Lspsaga goto_definition<cr>", desc = " Go to Defition", mode = "n" },
-      { "<leader>lc", "<cmd>Lspsaga code_action<cr>", desc = " Code Action", mode = "n" },
+      { "<leader>ld", "<cmd>Lspsaga show_buf_diagnostics<cr>", desc = " Diagnostic Buffer", mode = "n" },
       { "<leader>ln", "<cmd>Lspsaga outline<cr>", desc = " Navbuddy", mode = "n" },
       {
         "<leader>lf",

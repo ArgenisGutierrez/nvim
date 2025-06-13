@@ -1,6 +1,14 @@
 -- Plugin de peticiones http https://github.com/rodrigoscc/http.nvim
 return {
   "rodrigoscc/http.nvim",
+  build = { ":TSUpdate http2", ":Http update_grammar_queries" },
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "nvim-treesitter/nvim-treesitter",
+    "nvim-telescope/telescope.nvim", -- optional: uses it as picker
+    "ibhagwan/fzf-lua",            -- optional: uses it as picker
+    "folke/snacks.nvim",           -- optional: uses it as picker
+  },
   keys = {
     { "<leader>rr", "<cmd>Http run_closest<cr>", desc = " Run request under cursor", mode = "n" },
     { "<leader>rh", "<cmd>Http open_hooks<cr>", desc = "󰛢 Open project hooks file", mode = "n" },
@@ -15,12 +23,4 @@ return {
       win_config = { split = "right" },
     })
   end,
-  build = { ":TSUpdate http2", ":Http update_grammar_queries" },
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvim-treesitter/nvim-treesitter",
-    "nvim-telescope/telescope.nvim", -- optional: uses it as picker
-    "ibhagwan/fzf-lua",            -- optional: uses it as picker
-    "folke/snacks.nvim",           -- optional: uses it as picker
-  },
 }
