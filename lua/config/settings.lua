@@ -4,10 +4,8 @@ vim.o.relativenumber = true
 vim.o.termguicolors = true
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
-vim.g.clipboard = unnamed
--- Remapear 'y' para usar el portapapeles del sistema
-vim.api.nvim_set_keymap("n", "y", '"+y', { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "y", '"+y', { noremap = true, silent = true })
+-- Usar el portapapeles del sistema por defecto
+vim.opt.clipboard = "unnamedplus"
 
 --identacion
 vim.o.tabstop = 2
@@ -31,5 +29,3 @@ keymap.set("i", "<M-l>", "<Right>")
 -- Split window
 keymap.set("n", "-", ":split<Return>")
 keymap.set("n", "|", ":vsplit<Return>")
-
-vim.lsp.buf.format({ async = true })

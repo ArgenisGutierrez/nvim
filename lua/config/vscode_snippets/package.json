@@ -32,6 +32,12 @@
           "gomod"
         ],
         "path": "./go.json"
+      },
+      {
+        "language": [
+          "html"
+        ],
+        "path": "./bootstrap.json"
       }
     ]
   }

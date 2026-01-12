@@ -1,25 +1,25 @@
 -- Contexto sobre los bloques de codigo https://github.com/code-biscuits/nvim-biscuits
 return {
-  'code-biscuits/nvim-biscuits',
+  "code-biscuits/nvim-biscuits",
   enabled = true,
   config = function()
-    require('nvim-biscuits').setup({
+    require("nvim-biscuits").setup({
       cursor_line_only = true,
       default_config = {
         max_length = 60,
         min_distance = 5,
-        prefix_string = " 📎 "
+        prefix_string = " 📎 ",
       },
       language_config = {
         html = {
-          prefix_string = " 🌐 "
+          prefix_string = " 🌐 ",
         },
         javascript = {
           prefix_string = " ✨ ",
-          max_length = 80
+          max_length = 80,
         },
-      }
+      },
     })
     vim.cmd([[highlight BiscuitColor guifg=#ffffff]])
-  end
+  end,
 }
