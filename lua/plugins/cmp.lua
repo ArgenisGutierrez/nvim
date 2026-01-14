@@ -9,7 +9,6 @@ return {
 		"L3MON4D3/LuaSnip",
 		"neovim/nvim-lspconfig",
 		"rafamadriz/friendly-snippets",
-		"luckasRanarison/tailwind-tools.nvim",
 		"onsails/lspkind-nvim",
 	},
 	event = "VeryLazy",
@@ -17,7 +16,6 @@ return {
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
 		local lspkind = require("lspkind")
-		local tailwind_cmp_format = require("tailwind-tools.cmp").lspkind_format
 		local select_opts = { behavior = cmp.SelectBehavior.Select }
 
 		-- Cargar los snippets desde friendly-snippets
