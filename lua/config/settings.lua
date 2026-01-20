@@ -1,31 +1,83 @@
--- Opciones
-vim.o.number = true
-vim.o.relativenumber = true
-vim.o.termguicolors = true
+-- Leader
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
--- Usar el portapapeles del sistema por defecto
-vim.opt.clipboard = "unnamedplus"
 
---identacion
-vim.o.tabstop = 2
-vim.o.softtabstop = 2
-vim.o.expandtab = true
-vim.o.shiftwidth = 2
+local opt = vim.opt
 
--- Keymaps
-local keymap = vim.keymap
--- Move window
-keymap.set("n", "<C-h>", "<C-w>h")
-keymap.set("n", "<C-k>", "<C-w>k")
-keymap.set("n", "<C-j>", "<C-w>j")
-keymap.set("n", "<C-l>", "<C-w>l")
--- Move Insert Mode
-keymap.set("i", "<M-h>", "<Left>")
-keymap.set("i", "<M-j>", "<Down>")
-keymap.set("i", "<M-k>", "<Up>")
-keymap.set("i", "<M-l>", "<Right>")
+opt.autowrite = true
+opt.clipboard = vim.env.SSH_CONNECTION and "" or "unnamedplus"
+opt.completeopt = "menu,menuone,noselect"
+opt.conceallevel = 2
+opt.confirm = true
+opt.cursorline = true
+opt.expandtab = true
 
--- Split window
-keymap.set("n", "-", ":split<Return>")
-keymap.set("n", "|", ":vsplit<Return>")
+opt.fillchars = {
+	foldopen = "",
+	foldclose = "",
+	fold = " ",
+	foldsep = " ",
+	diff = "╱",
+	eob = " ",
+}
+
+opt.foldlevel = 99
+opt.foldmethod = "indent"
+opt.foldtext = ""
+opt.formatoptions = "jcroqlnt"
+opt.grepformat = "%f:%l:%c:%m"
+opt.grepprg = "rg --vimgrep"
+opt.ignorecase = true
+opt.inccommand = "nosplit"
+opt.jumpoptions = "view"
+opt.laststatus = 3
+opt.linebreak = true
+opt.list = true
+opt.mouse = "a"
+opt.number = true
+opt.relativenumber = true
+opt.pumblend = 10
+opt.pumheight = 10
+opt.ruler = false
+opt.scrolloff = 4
+
+opt.sessionoptions = {
+	"buffers",
+	"curdir",
+	"tabpages",
+	"winsize",
+	"help",
+	"globals",
+	"skiprtp",
+	"folds",
+}
+
+opt.shiftround = true
+opt.shiftwidth = 2
+opt.shortmess:append({ W = true, I = true, c = true, C = true })
+opt.showmode = false
+opt.sidescrolloff = 8
+opt.signcolumn = "yes"
+opt.smartcase = true
+opt.smartindent = true
+opt.spelllang = { "en" }
+opt.splitbelow = true
+opt.splitkeep = "screen"
+opt.splitright = true
+
+-- Statuscolumn simple
+opt.statuscolumn = ""
+
+opt.tabstop = 2
+opt.termguicolors = true
+opt.timeoutlen = vim.g.vscode and 1000 or 300
+opt.undofile = true
+opt.undolevels = 10000
+opt.updatetime = 200
+opt.virtualedit = "block"
+opt.wildmode = "longest:full,full"
+opt.winminwidth = 5
+opt.wrap = false
+
+-- Markdown
+vim.g.markdown_recommended_style = 0
